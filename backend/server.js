@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 5000; // port to run the server on
 app.use(cors());                          // Allow cross-origin requests
 app.use(express.json())                  // parse incoming JSON data
 
+// adding taskRoutes
+const taskRoutes = require("./routes/taskRoutes")
+app.use("/api/routes", taskRoutes)
+
 // Test route
 app.get('/', (req, res) => {
     res.send("API is running...")
